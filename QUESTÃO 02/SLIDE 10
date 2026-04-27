@@ -1,0 +1,42 @@
+                                                    # SLIDE 10 - SENHA MASCARADA 
+import getpass
+usuario = input("Bem-vindo ao Clube do Livro!!! Antes de tudo digite um nome de usuário!:").strip()
+# CADASTRO DE USUÁRIO E SENHA COM LOOPING E VERIFICAÇÃO POR ESTRUTURA CONDICIONAL
+while True:
+    # SENHA MASCARADA UTILIZANDO "GETPASS.GETPASS"
+    senha = getpass.getpass ("Muito bem, agora escolha uma senha de quatro digitos sendo um deles uma letra:").strip()
+    # VERIFICAÇÃO DE "LEN" PARA QUANTIDADE CORRETA DE DIGITOS E "C.ISUPPER" PARA PELO MENOS UMA LETRA MAIÚSCULA
+    if len(senha) == 4 and any(c.isupper() for c in senha): 
+        print("Usuário registrado")
+        break
+    # VERIFICAÇÃO CASO A SENHA NÃO CUMPRA OS REQUISITOS DE SENHA
+    else:
+        print("Senha inválida. Verifique se temos 4 digitos havendo uma letra maiúscula!")    
+                                                    # ///LOGIN///
+# 1.0 OPÇÃO DE DAR INÍCIO AO USO DO SOFTWARE ASSIM QUE SE FAZ O CADASTRO
+while True:    
+    confirmacao = input("com sua conta pronta, deseja começar a utilização do app? (SIM/NÃO)").strip().upper()
+    # FOI ACEITADO O "SYM" E "S" PARA NÃO RETARDAR A EXPERIÊNCIA DO USUÁRIO
+    if confirmacao == "SIM" or confirmacao == "S" or confirmacao == "SYM":
+        print ("Olá! Seja bem-vindo ao Clube do Livro!")
+        break
+        
+# 1.1 OPÇÃO DE DAR INÍCIO AO USO DO SOFTWARE ASSIM QUE SE FAZ O CADASTRO
+     # FOI ACEITADO O "N" POIS O SOFTWARE FICARA MAIS AMIGÁVEL E FLUIDO
+    elif confirmacao == "NÃO" or confirmacao == "NAO" or confirmacao == "N":
+        print("Tudo bem! O Clube do Livro está a sua disposição sempre!!!")
+        # SAÍDA DO SOFTWARE
+        exit()
+# VERIFICAÇÃO CASO O USUÁRIO DIGITE ALGO DIFERENTE DO PERMITIDO
+    else:
+        print ('Digite apenas "SIM" ou "NÃO". Tente novamente.')
+# VERIFICAÇÃO DE LOGIN ATRAVÉS DE LOOPING E ESTRUTURA CONDICIONAL 
+while True:     
+    login_user = input("DIGITE seu Nome:")
+        # SENHA MASCARADA COM "GETPASS.GETPASS"          
+    login_senha = getpass.getpass("DIGITE sua Senha:")
+    if login_user == usuario and login_senha == senha:
+        print(f"Olá {usuario}, o Mestre Dos Livros está feliz em te receber!!! ")
+        exit()
+    else:
+        print("Acesso negado! Acho que você não leu direito...")                               
